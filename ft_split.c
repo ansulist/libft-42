@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anita <anita@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:13:56 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/07 16:57:39 by anita            ###   ########.fr       */
+/*   Updated: 2022/01/23 19:37:30 by anitasulist      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *src, int n)
+char *ft_strndup(const char *src, int n)
 {
-	int		i;
-	char	*str;
+	int i;
+	char *str;
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * n + 1);
@@ -30,41 +30,66 @@ char	*ft_strndup(const char *src, int n)
 	return (str);
 }
 
-int	count_words(char const *s, char c)
-{
-	int	i;
+char	*next_word(const char *s, char c) {
+	int i;
+	char *ret;
 
 	i = 0;
-	while (s != 0)
-	{
+	ret = (char *)s;
+	while (s[i] != '\0') {
+		if (s[i] != c)
+			return ret;
+		ret = (char *)s + i + 1;
 		i++;
-		s = ft_strchr(s, c);
-		if (s != 0)
-		{
-			s++;
-		}
+	}
+	return ret;
+}
+
+int	wordlen(char *s, char c) {
+	int i;
+
+	i = 0;
+	while (s[i] != '\0' && s[i] != c) {
+		i++;
 	}
 	return (i);
 }
 
+int	count_words(char const *s, char c)
+{
+	int i;
+	int nb_word;
+	char *nextword;
+
+	i = 0;
+	nb_word = 0;
+	nextword = next_word(s, c);
+	while (nextword != NULL && nextword[0] != '\0')
+	{
+		nb_word++;
+		nextword = next_word(nextword + wordlen(nextword, c), c);
+	}
+	return (nb_word);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**words;
-	char	*nextword;
-	int		nbwords;
-	int		i;
+	char **words;
+	char *nextword;
+	int nbwords;
+	int i;
 
 	i = 0;
 	nbwords = count_words(s, c);
 	words = malloc(sizeof(char *) * (nbwords + 1));
-	while (s != 0)
+	if (words == NULL)
+		return (NULL);
+	nextword = next_word(s, c);
+	while (nextword != NULL && nextword[0] != '\0')
 	{
-		nextword = ft_strchr(s, c);
-		words[i] = ft_strndup(s, nextword - s);
-		s = nextword;
-		if (nextword != 0)
-			s++;
+		words[i] = ft_strndup(nextword,	wordlen(nextword, c));
 		i++;
+		nextword = next_word(nextword + wordlen(nextword, c), c);
 	}
 	words[i] = 0;
 	return (words);
@@ -72,7 +97,7 @@ char	**ft_split(char const *s, char c)
 /*
 int main ()
 {
-    char    **words = ft_split("anita+anita+anita", '+');
+    char    **words = ft_split("   tripouille42", ' ');
 
     int i = 0;
     while (words[i] != 0){

@@ -6,22 +6,15 @@
 /*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:19:43 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:46:50 by asulisti         ###   ########.fr       */
+/*   Updated: 2022/01/14 17:48:29 by asulisti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-		i++;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }

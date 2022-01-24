@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:28:53 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:04:17 by asulisti         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:00:26 by anitasulist      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	realnb;
@@ -26,13 +26,12 @@ int	ft_atoi(char *str)
 	{
 		i++;
 	}
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		minusorplus *= -1;
+		if (str[i] == '-')
+			minusorplus *= -1;
 		i++;
 	}
-	if (str[i] == '+')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		realnb = (realnb * 10) + (str[i] - 48);
@@ -43,6 +42,6 @@ int	ft_atoi(char *str)
 /*
 int	main (void)
 {
-	printf ("%d", atoi("+-25"));
+	printf ("%d", atoi("-+25"));
 }
 */

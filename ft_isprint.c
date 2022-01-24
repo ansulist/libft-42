@@ -6,25 +6,16 @@
 /*   By: asulisti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 16:06:10 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 14:20:44 by asulisti         ###   ########.fr       */
+/*   Updated: 2022/01/14 17:29:45 by asulisti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= ' ' && str[i] <= '~')
-		{
-			i++;
-		}
-		else
-			return (0);
-	}
-	return (1);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	else
+		return (0);
 }

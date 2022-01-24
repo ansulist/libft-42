@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anita <anita@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:12:15 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/11 21:13:20 by anita            ###   ########.fr       */
+/*   Updated: 2022/01/20 15:25:41 by anitasulist      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dst, const void *src, size_t lenght)
 		i = 0;
 		while (i < lenght)
 		{
-			(d + lenght)[i] = (s + lenght)[i];
+			*(d + lenght - 1 - i) = *(s + lenght - 1 - i);
 			i++;
 		}
 		return (dst);

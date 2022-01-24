@@ -3,54 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:19:17 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 15:11:48 by asulisti         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:43:11 by anitasulist      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	find_trim_start_index(char const *s1, char const *set)
+static int	fake_strchr(const char *s1, char c)
 {
 	int	i;
-	int	len_set;
 
 	i = 0;
-	len_set = ft_strlen(set);
-	while (ft_strncmp(s1 + i, set, len_set) == 0)
+	while (s1[i] != '\0')
 	{
-		i = i + len_set;
+		if (s1[i] == c)
+			return (1);
+		i++;
 	}
-	return (i);
-}
-
-int	find_trim_end_index(char const *s1, char const *set)
-{
-	int	j;
-	int	len_set;
-
-	j = 0;
-	len_set = ft_strlen(set);
-	while (ft_strlen(s1) - len_set - j > 0 && ft_strncmp
-		(s1 + ft_strlen(s1) - len_set - j, set, len_set) == 0)
-	{
-		j = j + len_set;
-	}
-	return (j);
-}
+	return (0);
+} 
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	char	*result;
+	int	first;
+	int	last;
 
-	i = find_trim_start_index(s1, set);
-	j = find_trim_end_index(s1, set);
-	result = ft_substr(s1, i, ft_strlen(s1) - i - j);
-	return (result);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	first = 0;
+	while (s1[first] && fake_strchr(set, s1[first]))
+	{
+		first++;
+	}
+	last = ft_strlen(s1);
+	while (last >= 0 && last != first && fake_strchr(set, s1[last - 1]))
+	{
+		last--;
+	}
+	return (ft_substr(s1, first, last - first));
 }
 /*
 int main (void)

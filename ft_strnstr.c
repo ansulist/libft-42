@@ -3,46 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:41:37 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:46:20 by asulisti         ###   ########.fr       */
+/*   Updated: 2022/01/20 22:22:26 by anitasulist      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	finding_match(char *str, char *to_find)
+int	finding_match(const char *haystack, const char *needle)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (to_find[i] != '\0')
+	while (needle[i] != '\0')
 	{
-		if (to_find[i] != str[i])
-		{
+		if (needle[i] != haystack[i])
 			return (0);
-		}
 		i++;
 	}
 	return (1);
 }
 
-char	*ft_strnstr(char *str, char *to_find, int n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (to_find[0] == '\0')
+	if (needle[0] == '\0')
+		return ((char *)(haystack));
+	while (haystack[i] != '\0' && i < n)
 	{
-		return (str);
-	}
-	while (str[i] != '\0' && i < (n - 1))
-	{
-		if (finding_match(str + i, to_find) == 1)
-		{
-			return (str + i);
-		}
+		if (i + ft_strlen(needle) > n)
+			return (NULL);
+		if (finding_match(haystack + i, needle) == 1)
+			return ((char *)(haystack + i));
 		i++;
 	}
 	return (0);
