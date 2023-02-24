@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 13:55:50 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/21 20:18:53 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:03:09 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/19 18:22:10 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_length_int(int n)
 {
@@ -80,14 +79,19 @@ char	*ft_itoa(int n)
 	else
 		return (ft_itoa_positive(n));
 }
-/*
-int main    (void)
-{
-    printf ("%s\n", ft_itoa(-2147483648));
-    printf ("%s\n", ft_itoa(2));
-    printf ("%s\n", ft_itoa(4));
-    printf ("%s\n", ft_itoa(10));
-    printf ("%s\n", ft_itoa(145));
-    printf ("%s\n", ft_itoa(-145));
-}
-*/
+
+// #include <stdio.h>
+// fungsi ini berguna untuk mengubah dari angka asli
+// kedalam character dari angka tersebut dalam bentuk string
+// int main    (void)
+// {
+//     printf ("%s\n", ft_itoa(0100));
+// So when you pass 100 to your program it interprets that as decimal 100, 
+// which is the same as octal 144, and when you type 0100 it 
+// interprets it as octal 100, which is the same as decimal 64.
+//     printf ("%s\n", ft_itoa(01000));
+//     // printf ("%s\n", ft_itoa(4));
+//     // printf ("%s\n", ft_itoa(10));
+//     // printf ("%s\n", ft_itoa(145));
+//     // printf ("%s\n", ft_itoa(-145));
+// }

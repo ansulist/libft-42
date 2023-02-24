@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:21:04 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/14 17:48:26 by asulisti         ###   ########.fr       */
+/*   Created: 2022/11/07 17:17:11 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/17 20:58:29 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

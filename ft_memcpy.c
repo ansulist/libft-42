@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anita <anita@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:35:30 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/11 15:19:01 by anita            ###   ########.fr       */
+/*   Created: 2022/11/07 16:55:35 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:11:16 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t lenght)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < lenght)
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	while (i < n)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
 		i++;
@@ -26,12 +28,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t lenght)
 }
 //fungsi ini berguna untuk menyalin memori dari src ke dest.
 // warning : fungsi ini tidak menghandle overlap!!
-/*
-int main (void)
-{
-    char arrayA[3] = "akk";
-    char arrayB[3];
-    ft_memcpy(arrayB, arrayA, 5);
-    printf("%c, %c, %c", arrayB[0], arrayB[1], arrayB[2]);
-}
-*/

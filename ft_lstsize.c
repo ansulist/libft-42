@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 13:56:32 by ansulist          #+#    #+#             */
-/*   Updated: 2022/11/22 14:02:25 by ansulist         ###   ########.fr       */
+/*   Created: 2022/11/09 16:44:19 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/15 17:31:13 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_lstsize(t_list *lst)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	int	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
+// fungsi ini berguna untuk menghitung size dari node dalam list
+// caranya dengan akses sampe akhir dan kembalikan 

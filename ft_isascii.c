@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 22:52:43 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/20 14:40:25 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:02:26 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/07 17:02:29 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

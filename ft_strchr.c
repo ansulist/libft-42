@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:14:14 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:44:06 by asulisti         ###   ########.fr       */
+/*   Created: 2022/11/07 17:15:06 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:19:31 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (0);
 }
-/*
-int main    (void)
-{
-    char s[] = "aku adalah anak gembala";
-    char c = 'g';
-    printf("%s", strchr(s, c));
-}
-*/
+
+// useful to find the char itself
+// and return the entire string after finding
+// int main    (void)
+// {
+//     char s[] = "i went crazy over you";
+//     char c = 'a';
+//     printf("%s", strchr(s, c));
+// }

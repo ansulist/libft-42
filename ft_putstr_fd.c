@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anita <anita@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:13:39 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/04 19:48:46 by anita            ###   ########.fr       */
+/*   Created: 2022/11/07 17:12:50 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 13:55:54 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
-/*
-int main () {
-    char test[] = "I went crazy over you";
-   ft_putstr_fd(test, 1);
-   return(0);
-}
-*/
+
+// int main () {
+//     char test[] = "I went crazy over you";
+//    ft_putstr_fd(test, 1);
+//    return(0);
+// }

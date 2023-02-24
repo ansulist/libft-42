@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:13:24 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:43:37 by asulisti         ###   ########.fr       */
+/*   Created: 2022/11/07 17:12:41 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:11:49 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_calcul(n, fd);
 	}
 }
-/*
-int main (void)
-{
-    int nbr = 123456;
-    ft_putnbr_fd(nbr, 1);
-    return(0);
-}
-*/

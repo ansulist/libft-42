@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asulisti <asulisti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:13:00 by asulisti          #+#    #+#             */
-/*   Updated: 2021/12/29 16:43:00 by asulisti         ###   ########.fr       */
+/*   Created: 2022/11/07 17:12:19 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/07 17:12:26 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

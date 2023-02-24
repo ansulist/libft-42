@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anita <anita@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 12:45:50 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/07 20:45:20 by anita            ###   ########.fr       */
+/*   Created: 2022/11/07 17:16:23 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:12:45 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+//specific case, \200 itu hasilnya minus jadi pakai unsign
+//hanya untuk kasus tertentu saja

@@ -3,39 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:12:15 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/20 15:25:41 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:12:07 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/19 16:11:44 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t lenght)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*d;
 	char	*s;
 	size_t	i;
 
-	d = (char *)dst;
-	s = (char *)src;
 	if (dst == src)
 		return (dst);
+	d = (char *)dst;
+	s = (char *)src;
 	if (s < d)
 	{
 		i = 0;
-		while (i < lenght)
+		while (i < len)
 		{
-			*(d + lenght - 1 - i) = *(s + lenght - 1 - i);
+			d[len - 1 - i] = s[len - 1 - i];
 			i++;
 		}
 		return (dst);
 	}
 	i = 0;
-	while (i < lenght)
+	while (i < len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		d[i] = s[i];
 		i++;
 	}
 	return (dst);

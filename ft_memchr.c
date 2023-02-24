@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 18:08:12 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/20 20:26:36 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:03:23 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/17 20:56:54 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char	*string;
-	size_t		i;
+	unsigned char	*string;
+	size_t			i;
 
 	i = 0;
-	string = (const char *)s;
+	string = (unsigned char *)s;
 	while (i < n)
 	{
 		if (string[i] == (unsigned char)c)
@@ -27,5 +27,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-// dijadikan unsugned char karna batas char
+// dijadikan unsigned char karna batas char
 // adalah 255 jadi kalo overflow dia balik lagi

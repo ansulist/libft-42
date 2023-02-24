@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:12:31 by ansulist          #+#    #+#             */
-/*   Updated: 2022/11/22 14:11:43 by ansulist         ###   ########.fr       */
+/*   Created: 2022/11/12 15:43:02 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/15 17:15:53 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (s == NULL)
+	t_list	*last_list_element;
+
+	if (new == NULL)
 		return ;
-	write(fd, s, ft_strlen(s));
-	ft_putchar_fd('\n', fd);
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last_list_element = ft_lstlast(*lst);
+	last_list_element->next = new;
 }
+// guna fungsi ini adalah untuk menambahkan bode baru di akhir lst
+// pertama kamu pergi ke pointer paling akhir pake ft_lstlast
+// setelah ketemu, dia akan return NULL
+// di baris akhir kamu mengganti NULL dengan yg baru

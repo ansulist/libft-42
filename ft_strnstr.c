@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 12:41:37 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/20 22:22:26 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:16:30 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:20:28 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	i = 0;
 	if (needle[0] == '\0')
 		return ((char *)(haystack));
+	if (n == 0)
+		return (NULL);
 	while (haystack[i] != '\0' && i < n)
 	{
 		if (i + ft_strlen(needle) > n)
@@ -43,3 +45,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	}
 	return (0);
 }
+
+// fungsi ini digunakan untuk mencari string dalam string
+// dan mengembalikan jika stringnya di 
+// temukan sampai dengan akhir string itu sendiri

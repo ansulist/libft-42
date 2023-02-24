@@ -3,24 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:19:30 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/20 22:48:12 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:16:57 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:14:00 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, int len)
+size_t	get_target_len(size_t s_len, unsigned int start)
 {
-	unsigned int i;
-	char *newstring;
-	char target_len;
+	if (s_len < (size_t)start)
+		return (0);
+	return (s_len - start);
+}
 
-	target_len = ft_strlen(s) - start;
-	if (target_len < 0)
-		target_len = 0;
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t			i;
+	char			*newstring;
+	size_t			target_len;
+
+	if (s == NULL)
+		return (NULL);
+	target_len = get_target_len(ft_strlen(s), start);
 	if (len > target_len)
 		len = target_len;
 	if (len < target_len)
@@ -38,12 +45,5 @@ char *ft_substr(char const *s, unsigned int start, int len)
 	newstring[i - start] = '\0';
 	return (newstring);
 }
-/*
-int main (void)
-{
-    char str[] = "anita";
-    char *newstring;
-    newstring = ft_substr(str, 2, 2);
-    printf ("%s", newstring);
-}
-*/
+// fungsi ini berguna untuk mengurangi string
+// len adalah panjang dari akhir string yang diinginkan

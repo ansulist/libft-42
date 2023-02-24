@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anitasulistiyawati <anitasulistiyawati@    +#+  +:+       +#+        */
+/*   By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 17:19:17 by asulisti          #+#    #+#             */
-/*   Updated: 2022/01/21 15:43:11 by anitasulist      ###   ########.fr       */
+/*   Created: 2022/11/07 17:16:50 by ansulist          #+#    #+#             */
+/*   Updated: 2022/11/22 14:13:49 by ansulist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	fake_strchr(const char *s1, char c)
 		i++;
 	}
 	return (0);
-} 
+}	
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -45,10 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ft_substr(s1, first, last - first));
 }
-/*
-int main (void)
-{
-    printf("%s", ft_strtrim("dirinyadirinyadirinya 
-	nitadirinyadirinyadirinya", "dirinya"));
-}
-*/
+
+// fungsi ini digunakan untuk memangkas string
+// caranya dicari dari depan dan pangkas yang di depan
+// setelah itu pangkas yg di belakang
