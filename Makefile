@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anita <anita@student.42.fr>                +#+  +:+       +#+         #
+#    By: ansulist <ansulist@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/28 17:02:34 by asulisti          #+#    #+#              #
-#    Updated: 2022/01/11 15:15:59 by anita            ###   ########.fr        #
+#    Created: 2022/11/07 17:17:27 by ansulist          #+#    #+#              #
+#    Updated: 2022/11/17 19:56:33 by ansulist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC =	ft_atoi.c \
+SRC = \
+	ft_atoi.c \
+    ft_calloc.c \
 	ft_bzero.c \
     ft_isalnum.c \
     ft_isalpha.c \
@@ -46,7 +48,20 @@ SRC =	ft_atoi.c \
     ft_tolower.c \
     ft_toupper.c \
 
+BONUS_S := $(SRC) \
+    ft_lstadd_back.c \
+    ft_lstadd_front.c \
+    ft_lstclear.c \
+    ft_lstdelone.c \
+    ft_lstiter.c \
+    ft_lstlast.c \
+    ft_lstmap.c \
+    ft_lstnew.c \
+    ft_lstsize.c \
+
 OBJ = $(SRC:.c=.o)
+
+BONUS_O = $(BONUS_S:.c=.o)
 
 HEADERS = ./includes
 
@@ -55,15 +70,22 @@ all: $(NAME)
 $(NAME):
 	@echo "Compiling in Progress .."
 	@gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADERS) && ar rc $(NAME) $(OBJ)
+	@ar -s $(NAME) $(OBJ)
 	@echo "Finished!"
 clean: 
 	@echo "Removing all .o's ..."
-	@/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ) $(BONUS_O)
 	@echo "Finished!"
 
 fclean:
 	@echo "Removing lib ..."
-	@/bin/fm -f $(NAME)
+	@/bin/rm -f $(NAME)
 	@echo "Finished!"
 
 re: fclean all
+
+bonus: $(BONUS_O)
+	@gcc -Wall -Wextra -Werror -c $(BONUS_S) -I $(HEADERS) && ar rc $(NAME) $(BONUS_O)
+	@ar -s $(NAME) $(BONUS_O)
+
+.PHONY: all clean fclean re bonus
